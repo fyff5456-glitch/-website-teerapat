@@ -1,17 +1,154 @@
 
-<div class="card" data-category="sad">
-    <img src="https://placehold.co/500x300/35243f/ffffff?text=SAD+MUSIC">
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THAI MUSIC GALLERY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <div class="song-info">
-        <h3>ซ่อนกลิ่น</h3>
-        <p>ศิลปิน: PALMY</p>
-        <p>แนวเพลง: Pop / เพลงเศร้า</p>
-        <p class="description">
-            เพลงเกี่ยวกับความทรงจำและความรัก
-            ที่ยังคงอยู่ในใจ แม้เวลาจะผ่านไป
-        </p>
-        <span>💔 เพลงเศร้า</span>
-        <a href="https://www.youtube.com/results?search_query=PALMY+ซ่อนกลิ่น"
-           target="_blank">▶ ฟังเพลง</a>
+<header>
+    <h1>🎵 THAI MUSIC GALLERY</h1>
+    <p>ค้นพบเพลงไทยที่ใช่ ในอารมณ์ที่เป็นคุณ</p>
+</header>
+
+<main>
+    <h2>🎧 ค้นหาเพลงตามอารมณ์</h2>
+
+    <div class="filters">
+        <button class="active" onclick="filterMusic('all',this)">ทั้งหมด</button>
+        <button onclick="filterMusic('sad',this)">💔 เพลงเศร้า</button>
+        <button onclick="filterMusic('love',this)">❤️ เพลงรัก</button>
+        <button onclick="filterMusic('fun',this)">🎉 เพลงสนุก</button>
     </div>
-</div>
+
+    <div class="gallery">
+
+        <!-- เพลงเศร้า -->
+
+        <div class="card" data-category="sad">
+            <img src="https://placehold.co/500x300/35243f/ffffff?text=SAD+SONG">
+            <div class="song-info">
+                <h3>ซ่อนกลิ่น</h3>
+                <p>🎤 ศิลปิน: PALMY</p>
+                <p>🎼 แนวเพลง: Pop</p>
+                <p class="description">เพลงเกี่ยวกับความทรงจำและความรักที่ยังคงอยู่ในใจ</p>
+                <span>💔 เพลงเศร้า</span>
+                <a href="https://www.youtube.com/results?search_query=PALMY+ซ่อนกลิ่น" target="_blank">▶ ฟังเพลง</a>
+            </div>
+        </div>
+
+        <div class="card" data-category="sad">
+            <img src="https://placehold.co/500x300/35243f/ffffff?text=SAD+SONG">
+            <div class="song-info">
+                <h3>ฝนตกไหม</h3>
+                <p>🎤 ศิลปิน: Three Man Down</p>
+                <p>🎼 แนวเพลง: Pop Rock</p>
+                <p class="description">เพลงที่สื่อถึงความคิดถึงและความห่วงใยคนที่อยู่ไกล</p>
+                <span>💔 เพลงเศร้า</span>
+                <a href="https://www.youtube.com/results?search_query=Three+Man+Down+ฝนตกไหม" target="_blank">▶ ฟังเพลง</a>
+            </div>
+        </div>
+
+        <div class="card" data-category="sad">
+            <img src="https://placehold.co/500x300/35243f/ffffff?text=SAD+SONG">
+            <div class="song-info">
+                <h3>ถ้าเราเจอกันอีก</h3>
+                <p>🎤 ศิลปิน: Tilly Birds</p>
+                <p>🎼 แนวเพลง: Pop Rock</p>
+                <p class="description">เพลงเกี่ยวกับการจากลาและความหวังที่จะได้พบกันอีกครั้ง</p>
+                <span>💔 เพลงเศร้า</span>
+                <a href="https://www.youtube.com/results?search_query=Tilly+Birds+ถ้าเราเจอกันอีก" target="_blank">▶ ฟังเพลง</a>
+            </div>
+        </div>
+
+        <!-- เพลงรัก -->
+
+        <div class="card" data-category="love">
+            <img src="https://placehold.co/500x300/633047/ffffff?text=LOVE+SONG">
+            <div class="song-info">
+                <h3>รักแรก</h3>
+                <p>🎤 ศิลปิน: NONT TANONT</p>
+                <p>🎼 แนวเพลง: Pop</p>
+                <p class="description">เพลงที่เล่าถึงความรักครั้งแรกและความทรงจำที่สวยงาม</p>
+                <span>❤️ เพลงรัก</span>
+                <a href="https://www.youtube.com/results?search_query=NONT+TANONT+รักแรก" target="_blank">▶ ฟังเพลง</a>
+            </div>
+        </div>
+
+        <div class="card" data-category="love">
+            <img src="https://placehold.co/500x300/633047/ffffff?text=LOVE+SONG">
+            <div class="song-info">
+                <h3>คลั่งรัก</h3>
+                <p>🎤 ศิลปิน: First Anuwat</p>
+                <p>🎼 แนวเพลง: Pop</p>
+                <p class="description">เพลงที่ถ่ายทอดความรู้สึกของคนที่กำลังตกหลุมรัก</p>
+                <span>❤️ เพลงรัก</span>
+                <a href="https://www.youtube.com/results?search_query=First+Anuwat+คลั่งรัก" target="_blank">▶ ฟังเพลง</a>
+            </div>
+        </div>
+
+        <div class="card" data-category="love">
+            <img src="https://placehold.co/500x300/633047/ffffff?text=LOVE+SONG">
+            <div class="song-info">
+                <h3>คู่ชีวิต</h3>
+                <p>🎤 ศิลปิน: COCKTAIL</p>
+                <p>🎼 แนวเพลง: Rock</p>
+                <p class="description">เพลงที่สื่อถึงความรักและการอยู่เคียงข้างกันตลอดไป</p>
+                <span>❤️ เพลงรัก</span>
+                <a href="https://www.youtube.com/results?search_query=COCKTAIL+คู่ชีวิต" target="_blank">▶ ฟังเพลง</a>
+            </div>
+        </div>
+
+        <!-- เพลงสนุก -->
+
+        <div class="card" data-category="fun">
+            <img src="https://placehold.co/500x300/34345a/ffffff?text=FUN+SONG">
+            <div class="song-info">
+                <h3>ทรงอย่างแบด</h3>
+                <p>🎤 ศิลปิน: Paper Planes</p>
+                <p>🎼 แนวเพลง: Rock</p>
+                <p class="description">เพลงจังหวะสนุกสนานที่ได้รับความนิยมอย่างมาก</p>
+                <span>🎉 เพลงสนุก</span>
+                <a href="https://www.youtube.com/results?search_query=Paper+Planes+ทรงอย่างแบด" target="_blank">▶ ฟังเพลง</a>
+            </div>
+        </div>
+
+        <div class="card" data-category="fun">
+            <img src="https://placehold.co/500x300/34345a/ffffff?text=FUN+SONG">
+            <div class="song-info">
+                <h3>วัดปะหล่ะ?</h3>
+                <p>🎤 ศิลปิน: 4EVE</p>
+                <p>🎼 แนวเพลง: T-Pop</p>
+                <p class="description">เพลงป๊อปจังหวะสนุกที่เต็มไปด้วยความสดใส</p>
+                <span>🎉 เพลงสนุก</span>
+                <a href="https://www.youtube.com/results?search_query=4EVE+วัดปะหล่ะ" target="_blank">▶ ฟังเพลง</a>
+            </div>
+        </div>
+
+        <div class="card" data-category="fun">
+            <img src="https://placehold.co/500x300/34345a/ffffff?text=FUN+SONG">
+            <div class="song-info">
+                <h3>เมร่อน</h3>
+                <p>🎤 ศิลปิน: JUEPAK</p>
+                <p>🎼 แนวเพลง: Dance</p>
+                <p class="description">เพลงจังหวะสนุกสนาน เหมาะสำหรับการเต้นและความบันเทิง</p>
+                <span>🎉 เพลงสนุก</span>
+                <a href="https://www.youtube.com/results?search_query=JUEPAK+เมร่อน" target="_blank">▶ ฟังเพลง</a>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <h3>🎵 THAI MUSIC GALLERY</h3>
+    <p>เว็บไซต์รวบรวมเพลงไทยที่คุณชื่นชอบ</p>
+    <p>© 2026 Created by Student</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
