@@ -2,39 +2,376 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAME GALLERY PRO</title>
-    <link rel="stylesheet" href="./style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAME GALLERY PRO</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #100d19;
+    color: white;
+}
+
+header {
+    padding: 25px 8%;
+    background: linear-gradient(120deg,#24103e,#7135a5,#160e28);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    color: #d7a8ff;
+}
+
+.hero {
+    padding: 65px 0;
+}
+
+.hero h1 {
+    font-size: clamp(40px,7vw,65px);
+    margin: 15px 0;
+}
+
+.hero h1 span {
+    color: #d7a8ff;
+}
+
+.hero p {
+    color: #ddd;
+    line-height: 1.8;
+}
+
+.hero a {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 25px;
+    background: #9333ea;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.heading small {
+    color: #c084fc;
+    letter-spacing: 3px;
+}
+
+.heading h2 {
+    margin: 12px 0;
+    font-size: 30px;
+}
+
+.heading p {
+    color: #aaa;
+}
+
+#search {
+    display: block;
+    width: min(100%,500px);
+    margin: 25px auto;
+    padding: 15px 20px;
+    border-radius: 30px;
+    border: 1px solid #7542a0;
+    background: #211a30;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.filters button {
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: 1px solid #9333ea;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.filters button:hover,
+.filters button.active {
+    background: #9333ea;
+    transform: translateY(-3px);
+}
+
+#count {
+    text-align: center;
+    color: #c084fc;
+    margin-bottom: 25px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+}
+
+.card {
+    background: #211a30;
+    border: 1px solid #38294c;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px #9333ea44;
+}
+
+.cover {
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    background: linear-gradient(135deg,var(--c1),var(--c2));
+}
+
+.cover span {
+    font-size: 27px;
+    font-weight: bold;
+    text-shadow: 0 3px 8px #0008;
+}
+
+.info {
+    padding: 20px;
+}
+
+.category {
+    color: #c084fc;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.info h3 {
+    margin: 12px 0;
+}
+
+.info p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 48px;
+}
+
+.profile-btn {
+    margin-top: 15px;
+    padding: 11px 20px;
+    background: #9333ea;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.profile-btn:hover {
+    background: #c084fc;
+    transform: scale(1.05);
+}
+
+.empty {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 50px;
+    color: #aaa;
+}
+
+/* PROFILE */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: #000d;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-content {
+    max-width: 600px;
+    margin: 35px auto;
+    background: #211a30;
+    border: 1px solid #9333ea;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-cover {
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg,var(--c1),var(--c2));
+}
+
+.profile-cover span {
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.close {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    border: none;
+    background: #9333ea;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.profile-info {
+    padding: 25px;
+    line-height: 1.9;
+}
+
+.profile-info small {
+    color: #c084fc;
+}
+
+.profile-info h2 {
+    color: #d7a8ff;
+    margin: 8px 0 15px;
+}
+
+.profile-info > p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.details {
+    background: #151020;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.details p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.details strong {
+    color: #c084fc;
+}
+
+.game-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: #9333ea;
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    background: #1b1527;
+    padding: 35px 15px;
+    color: #aaa;
+    line-height: 2;
+}
+
+footer h2 {
+    color: #c084fc;
+}
+
+@media(max-width:800px) {
+    .gallery {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:520px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    nav span {
+        display: none;
+    }
+
+    .hero {
+        padding: 45px 20px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-<header class="hero">
-    <nav class="navbar">
+<header>
+    <nav>
         <h2>🎮 GAME GALLERY</h2>
         <span>THE WORLD OF GAMING</span>
     </nav>
 
-    <div class="hero-content">
-        <p class="tagline">WELCOME TO GAMING WORLD</p>
+    <div class="hero">
+        <p>WELCOME TO GAMING WORLD</p>
         <h1>DISCOVER YOUR<br><span>NEXT GAME</span></h1>
-        <p>ค้นพบเกมที่ใช่ สำรวจโลกแห่งความสนุกไปด้วยกัน</p>
-        <a href="#games" class="explore">EXPLORE GAMES ↓</a>
+        <p>รวมเกมยอดนิยม พร้อมข้อมูลและโปรไฟล์เกม</p>
+        <a href="#games">EXPLORE GAMES ↓</a>
     </div>
 </header>
 
 <main id="games">
 
-    <section class="section-title">
-        <p>OUR COLLECTION</p>
+    <div class="heading">
+        <small>OUR COLLECTION</small>
         <h2>ค้นหาเกมที่คุณชื่นชอบ</h2>
-        <span>รวมเกมยอดนิยม พร้อมข้อมูลและโปรไฟล์เกม</span>
-    </section>
-
-    <div class="search-box">
-        <input type="text" id="searchInput"
-        placeholder="🔍 ค้นหาชื่อเกม...">
+        <p>เลือกเกมที่สนใจและกดดูโปรไฟล์ได้เลย</p>
     </div>
+
+    <input type="text" id="search"
+    placeholder="🔍 ค้นหาชื่อเกม...">
 
     <div class="filters">
         <button class="active" data-filter="all">ทั้งหมด</button>
@@ -43,37 +380,39 @@
         <button data-filter="survival">🔥 Survival</button>
     </div>
 
-    <p class="game-count" id="gameCount"></p>
+    <p id="count"></p>
 
-    <div class="gallery" id="gameGallery"></div>
+    <div class="gallery" id="gallery"></div>
 
 </main>
 
-<!-- หน้าต่างโปรไฟล์เกม -->
-<div class="modal" id="profileModal">
+<div class="modal" id="modal">
     <div class="modal-content">
 
-        <button class="close-btn" id="closeModal">✕</button>
+        <button class="close" id="close">✕</button>
 
-        <img id="profileImage" src="" alt="Game">
+        <div class="profile-cover" id="profileCover">
+            <span id="pCover"></span>
+        </div>
 
         <div class="profile-info">
-            <span id="profileCategory"></span>
-            <h2 id="profileName"></h2>
+            <small id="pCategory"></small>
+            <h2 id="pName"></h2>
+            <p id="pDescription"></p>
 
-            <p id="profileDescription"></p>
-
-            <div class="profile-details">
-                <p><strong>🏢 ผู้พัฒนา:</strong> <span id="profileDeveloper"></span></p>
-                <p><strong>💻 แพลตฟอร์ม:</strong> <span id="profilePlatform"></span></p>
-                <p><strong>🎮 รูปแบบ:</strong> <span id="profileMode"></span></p>
-                <p><strong>📅 ปีที่เปิดตัว:</strong> <span id="profileYear"></span></p>
+            <div class="details">
+                <p><strong>🏢 ผู้พัฒนา:</strong> <span id="pDeveloper"></span></p>
+                <p><strong>💻 แพลตฟอร์ม:</strong> <span id="pPlatform"></span></p>
+                <p><strong>🎮 รูปแบบ:</strong> <span id="pMode"></span></p>
+                <p><strong>📅 ปีที่เปิดตัว:</strong> <span id="pYear"></span></p>
             </div>
 
-            <a id="profileLink" href="#" target="_blank" rel="noopener">
-                🌐 เว็บไซต์เกมอย่างเป็นทางการ
+            <a href="#" target="_blank" rel="noopener"
+            class="game-link" id="pLink">
+                🌐 เว็บไซต์เกม
             </a>
         </div>
+
     </div>
 </div>
 
@@ -83,7 +422,290 @@
     <p>© 2026 Created by Student</p>
 </footer>
 
-<script src="./script.js"></script>
+<script>
 
+const games = [
+    {
+        name:"GTA V", category:"action",
+        description:"สำรวจเมือง Los Santos ทำภารกิจและสัมผัสโลกเปิดที่กว้างใหญ่",
+        developer:"Rockstar Games", platform:"PC, PlayStation, Xbox",
+        mode:"Single Player / Online", year:"2013",
+        c1:"#6d28d9",c2:"#181044",
+        link:"https://www.rockstargames.com/gta-v"
+    },
+    {
+        name:"VALORANT", category:"action",
+        description:"เกมแข่งขันแบบทีมที่ต้องใช้ทักษะและการวางแผน",
+        developer:"Riot Games", platform:"PC",
+        mode:"Multiplayer", year:"2020",
+        c1:"#be123c",c2:"#3b102b",
+        link:"https://playvalorant.com/"
+    },
+    {
+        name:"CALL OF DUTY", category:"action",
+        description:"เกมแอ็กชันที่มีโหมดการเล่นหลากหลาย",
+        developer:"Activision", platform:"PC, PlayStation, Xbox",
+        mode:"Single Player / Multiplayer", year:"2003",
+        c1:"#57534e",c2:"#171717",
+        link:"https://www.callofduty.com/"
+    },
+    {
+        name:"APEX LEGENDS", category:"action",
+        description:"เกม Battle Royale ที่มีตัวละครและความสามารถแตกต่างกัน",
+        developer:"Respawn Entertainment", platform:"PC, PlayStation, Xbox",
+        mode:"Multiplayer", year:"2019",
+        c1:"#991b1b",c2:"#2b1010",
+        link:"https://www.ea.com/games/apex-legends"
+    },
+    {
+        name:"FORTNITE", category:"action",
+        description:"เกมที่ผสมผสานการต่อสู้ การสร้าง และความสนุก",
+        developer:"Epic Games", platform:"PC, PlayStation, Xbox",
+        mode:"Multiplayer", year:"2017",
+        c1:"#2563eb",c2:"#312e81",
+        link:"https://www.fortnite.com/"
+    },
+    {
+        name:"OVERWATCH 2", category:"action",
+        description:"เกมต่อสู้เป็นทีมที่มีฮีโร่หลากหลาย",
+        developer:"Blizzard Entertainment", platform:"PC, PlayStation, Xbox",
+        mode:"Multiplayer", year:"2022",
+        c1:"#ea580c",c2:"#7c2d12",
+        link:"https://overwatch.blizzard.com/"
+    },
+    {
+        name:"MINECRAFT", category:"adventure",
+        description:"เกมสร้างโลก สำรวจสถานที่ และสร้างสิ่งต่าง ๆ ได้อย่างอิสระ",
+        developer:"Mojang Studios", platform:"PC, Mobile, Console",
+        mode:"Single Player / Multiplayer", year:"2011",
+        c1:"#15803d",c2:"#14532d",
+        link:"https://www.minecraft.net/"
+    },
+    {
+        name:"GENSHIN IMPACT", category:"adventure",
+        description:"ผจญภัยในโลกแฟนตาซีที่เต็มไปด้วยเรื่องราวและตัวละคร",
+        developer:"HoYoverse", platform:"PC, PlayStation, Mobile",
+        mode:"Single Player / Co-op", year:"2020",
+        c1:"#0e7490",c2:"#164e63",
+        link:"https://genshin.hoyoverse.com/"
+    },
+    {
+        name:"ZELDA", category:"adventure",
+        description:"ผจญภัยในดินแดนแฟนตาซี สำรวจสถานที่และค้นพบความลับ",
+        developer:"Nintendo", platform:"Nintendo Switch",
+        mode:"Single Player", year:"1986",
+        c1:"#a16207",c2:"#422006",
+        link:"https://www.nintendo.com/"
+    },
+    {
+        name:"STARDEW VALLEY", category:"adventure",
+        description:"เกมทำฟาร์ม ใช้ชีวิตในชนบทและสำรวจหมู่บ้าน",
+        developer:"ConcernedApe", platform:"PC, Mobile, Console",
+        mode:"Single Player / Multiplayer", year:"2016",
+        c1:"#15803d",c2:"#365314",
+        link:"https://www.stardewvalley.net/"
+    },
+    {
+        name:"HOGWARTS LEGACY", category:"adventure",
+        description:"ผจญภัยในโลกเวทมนตร์ของโรงเรียนฮอกวอตส์",
+        developer:"Avalanche Software", platform:"PC, PlayStation, Xbox",
+        mode:"Single Player", year:"2023",
+        c1:"#854d0e",c2:"#292524",
+        link:"https://www.hogwartslegacy.com/"
+    },
+    {
+        name:"RED DEAD REDEMPTION 2", category:"adventure",
+        description:"ผจญภัยในโลกตะวันตกที่กว้างใหญ่ พร้อมเรื่องราวเข้มข้น",
+        developer:"Rockstar Games", platform:"PC, PlayStation, Xbox",
+        mode:"Single Player / Online", year:"2018",
+        c1:"#991b1b",c2:"#292524",
+        link:"https://www.rockstargames.com/reddeadredemption2"
+    },
+    {
+        name:"PUBG", category:"survival",
+        description:"เกม Battle Royale ที่ผู้เล่นต้องเอาตัวรอดในสนามแข่งขัน",
+        developer:"KRAFTON", platform:"PC, PlayStation, Xbox, Mobile",
+        mode:"Multiplayer", year:"2017",
+        c1:"#a16207",c2:"#422006",
+        link:"https://pubg.com/"
+    },
+    {
+        name:"THE FOREST", category:"survival",
+        description:"เกมเอาชีวิตรอดและสำรวจป่าลึกลับ",
+        developer:"Endnight Games", platform:"PC, PlayStation",
+        mode:"Single Player / Co-op", year:"2018",
+        c1:"#166534",c2:"#052e16",
+        link:"https://store.steampowered.com/app/242760/The_Forest/"
+    },
+    {
+        name:"SUBNAUTICA", category:"survival",
+        description:"สำรวจโลกใต้ทะเลและค้นพบสิ่งมีชีวิตในมหาสมุทร",
+        developer:"Unknown Worlds", platform:"PC, PlayStation, Xbox",
+        mode:"Single Player", year:"2018",
+        c1:"#0891b2",c2:"#164e63",
+        link:"https://unknownworlds.com/subnautica/"
+    },
+    {
+        name:"DONT STARVE TOGETHER", category:"survival",
+        description:"รวบรวมทรัพยากรและวางแผนการใช้ชีวิตเพื่อเอาตัวรอด",
+        developer:"Klei Entertainment", platform:"PC, PlayStation, Xbox",
+        mode:"Multiplayer", year:"2016",
+        c1:"#78350f",c2:"#292524",
+        link:"https://www.klei.com/games/dont-starve-together"
+    },
+    {
+        name:"ARK SURVIVAL", category:"survival",
+        description:"เอาชีวิตรอดในโลกที่เต็มไปด้วยไดโนเสาร์",
+        developer:"Studio Wildcard", platform:"PC, PlayStation, Xbox",
+        mode:"Single Player / Multiplayer", year:"2017",
+        c1:"#166534",c2:"#052e16",
+        link:"https://survivetheark.com/"
+    },
+    {
+        name:"RAFT", category:"survival",
+        description:"เอาชีวิตรอดกลางมหาสมุทร เก็บทรัพยากรและสร้างแพ",
+        developer:"Redbeet Interactive", platform:"PC",
+        mode:"Single Player / Multiplayer", year:"2022",
+        c1:"#0369a1",c2:"#082f49",
+        link:"https://raft-game.com/"
+    }
+];
+
+const gallery = document.getElementById("gallery");
+const search = document.getElementById("search");
+const count = document.getElementById("count");
+const modal = document.getElementById("modal");
+
+let selectedCategory = "all";
+
+const categoryNames = {
+    action:"⚔️ ACTION",
+    adventure:"🌍 ADVENTURE",
+    survival:"🔥 SURVIVAL"
+};
+
+function displayGames() {
+
+    const keyword = search.value.toLowerCase();
+
+    const result = games.filter(game => {
+        const categoryMatch =
+            selectedCategory === "all" ||
+            game.category === selectedCategory;
+
+        const searchMatch =
+            game.name.toLowerCase().includes(keyword);
+
+        return categoryMatch && searchMatch;
+    });
+
+    count.textContent =
+        `แสดง ${result.length} จาก ${games.length} เกม`;
+
+    if(result.length === 0) {
+        gallery.innerHTML =
+            '<div class="empty">ไม่พบเกมที่ค้นหา 😢</div>';
+        return;
+    }
+
+    gallery.innerHTML = result.map(game => `
+        <div class="card">
+            <div class="cover"
+                style="--c1:${game.c1};--c2:${game.c2}">
+                <span>${game.name}</span>
+            </div>
+
+            <div class="info">
+                <span class="category">
+                    ${categoryNames[game.category]}
+                </span>
+                <h3>${game.name}</h3>
+                <p>${game.description}</p>
+
+                <button class="profile-btn"
+                    onclick="showProfile('${game.name}')">
+                    ดูโปรไฟล์เกม →
+                </button>
+            </div>
+        </div>
+    `).join("");
+}
+
+// FILTER
+document.querySelectorAll(".filters button").forEach(button => {
+    button.addEventListener("click", () => {
+
+        document.querySelectorAll(".filters button")
+            .forEach(btn => btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        selectedCategory = button.dataset.filter;
+
+        displayGames();
+    });
+});
+
+// SEARCH
+search.addEventListener("input", displayGames);
+
+// PROFILE
+function showProfile(name) {
+
+    const game = games.find(item => item.name === name);
+
+    if(!game) return;
+
+    const cover = document.getElementById("profileCover");
+
+    cover.style.setProperty("--c1",game.c1);
+    cover.style.setProperty("--c2",game.c2);
+
+    document.getElementById("pCover").textContent = game.name;
+    document.getElementById("pName").textContent = game.name;
+    document.getElementById("pCategory").textContent =
+        categoryNames[game.category];
+
+    document.getElementById("pDescription").textContent =
+        game.description;
+
+    document.getElementById("pDeveloper").textContent =
+        game.developer;
+
+    document.getElementById("pPlatform").textContent =
+        game.platform;
+
+    document.getElementById("pMode").textContent =
+        game.mode;
+
+    document.getElementById("pYear").textContent =
+        game.year;
+
+    document.getElementById("pLink").href = game.link;
+
+    modal.classList.add("show");
+    document.body.style.overflow = "hidden";
+}
+
+function closeProfile() {
+    modal.classList.remove("show");
+    document.body.style.overflow = "";
+}
+
+document.getElementById("close")
+    .addEventListener("click",closeProfile);
+
+modal.addEventListener("click",event => {
+    if(event.target === modal) closeProfile();
+});
+
+document.addEventListener("keydown",event => {
+    if(event.key === "Escape") closeProfile();
+});
+
+// START
+displayGames();
+
+</script>
 </body>
 </html>
