@@ -124,3 +124,38 @@ footer {
         font-size: 30px;
     }
 }
+
+.song-info {
+    padding: 15px;
+}
+
+.song-info h3 {
+    padding: 0 0 8px;
+    color: #ff80c0;
+}
+
+.song-info p {
+    padding: 5px 0;
+    color: #ddd;
+}
+
+.song-info .description {
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.song-info a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 18px;
+    background: #e84393;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.song-info a:hover {
+    background: #a52b79;
+    transform: scale(1.05);
+}
