@@ -223,56 +223,75 @@ footer h2 {
     }
 }
 
-const gameProfiles = {
-    gta: {
-        name: "GTA V",
-        category: "Action / Open World",
-        description: "เกมโลกเปิดที่ผู้เล่นสามารถสำรวจเมือง Los Santos ทำภารกิจ และพบกับเรื่องราวของตัวละคร",
-        developer: "Rockstar Games",
-        platform: "PC, PlayStation, Xbox",
-        mode: "Single Player / Online",
-        image: "https://placehold.co/600x400/29134a/ffffff?text=GTA+V",
-        link: "https://www.rockstargames.com/gta-v"
-    },
-    minecraft: {
-        name: "Minecraft",
-        category: "Adventure / Sandbox",
-        description: "เกมสร้างโลกที่ผู้เล่นสามารถสร้างบ้าน สำรวจสถานที่ และสร้างสิ่งต่าง ๆ ได้อย่างอิสระ",
-        developer: "Mojang Studios",
-        platform: "PC, Mobile, Console",
-        mode: "Single Player / Multiplayer",
-        image: "https://placehold.co/600x400/173b48/ffffff?text=MINECRAFT",
-        link: "https://www.minecraft.net/"
-    },
-    valorant: {
-        name: "VALORANT",
-        category: "Action / Tactical Shooter",
-        description: "เกมแข่งขันแบบทีมที่มีตัวละครและความสามารถแตกต่างกัน",
-        developer: "Riot Games",
-        platform: "PC",
-        mode: "Multiplayer",
-        image: "https://placehold.co/600x400/29134a/ffffff?text=VALORANT",
-        link: "https://playvalorant.com/"
-    }
-};
-
-function showProfile(id) {
-    const game = gameProfiles[id];
-
-    if (!game) return;
-
-    document.getElementById("profileName").textContent = game.name;
-    document.getElementById("profileCategory").textContent = game.category;
-    document.getElementById("profileDescription").textContent = game.description;
-    document.getElementById("profileDeveloper").textContent = "ผู้พัฒนา: " + game.developer;
-    document.getElementById("profilePlatform").textContent = "แพลตฟอร์ม: " + game.platform;
-    document.getElementById("profileMode").textContent = "รูปแบบ: " + game.mode;
-    document.getElementById("profileImage").src = game.image;
-    document.getElementById("profileLink").href = game.link;
-
-    document.getElementById("profileModal").style.display = "block";
+.profile-btn {
+    margin-top: 15px;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 20px;
+    background: #9333ea;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-function closeProfile() {
-    document.getElementById("profileModal").style.display = "none";
+.profile-btn:hover {
+    background: #c084fc;
+    transform: scale(1.05);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background: #000000dd;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 600px;
+    margin: 40px auto;
+    background: #211a32;
+    border: 1px solid #9333ea;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.profile-info {
+    padding: 25px;
+    line-height: 2;
+}
+
+.profile-info h2 {
+    color: #c084fc;
+}
+
+.profile-info a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #9333ea;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    background: #9333ea;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
 }
