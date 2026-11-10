@@ -1,143 +1,96 @@
 
-<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAME GALLERY</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+<!-- เพิ่มเกม Action -->
 
-<header class="hero">
-    <nav>
-        <h2>🎮 GAME GALLERY</h2>
-        <span>GAME COLLECTION</span>
-    </nav>
-
-    <div class="hero-content">
-        <p class="tagline">WELCOME TO GAMING WORLD</p>
-        <h1>DISCOVER YOUR<br><span>NEXT GAME</span></h1>
-        <p>รวมเกมยอดนิยมที่คุณไม่ควรพลาด</p>
-        <a href="#games" class="explore">EXPLORE GAMES ↓</a>
+<div class="card" data-category="action">
+    <img src="https://placehold.co/600x400/29134a/ffffff?text=APEX+LEGENDS">
+    <div class="info">
+        <span>⚔️ ACTION</span>
+        <h3>APEX LEGENDS</h3>
+        <p>เกมแข่งขันแนวแอ็กชันและวางแผนเป็นทีม</p>
+        <a href="https://www.ea.com/games/apex-legends" target="_blank">ดูรายละเอียด ↗</a>
     </div>
-</header>
+</div>
 
-<main id="games">
-    <section class="section-title">
-        <p>OUR COLLECTION</p>
-        <h2>ค้นหาเกมที่คุณชอบ</h2>
-        <span>เลือกหมวดหมู่เกมที่สนใจได้เลย</span>
-    </section>
-
-    <div class="filters">
-        <button class="active" onclick="filterGame('all',this)">ทั้งหมด</button>
-        <button onclick="filterGame('action',this)">⚔️ Action</button>
-        <button onclick="filterGame('adventure',this)">🌍 Adventure</button>
-        <button onclick="filterGame('survival',this)">🔥 Survival</button>
+<div class="card" data-category="action">
+    <img src="https://placehold.co/600x400/29134a/ffffff?text=FORTNITE">
+    <div class="info">
+        <span>⚔️ ACTION</span>
+        <h3>FORTNITE</h3>
+        <p>เกมต่อสู้และสร้างสิ่งต่าง ๆ ภายในโลกของเกม</p>
+        <a href="https://www.fortnite.com/" target="_blank">ดูรายละเอียด ↗</a>
     </div>
+</div>
 
-    <div class="gallery">
-
-        <div class="card" data-category="action">
-            <img src="https://placehold.co/600x400/29134a/ffffff?text=GTA+V" alt="GTA V">
-            <div class="info">
-                <span>⚔️ ACTION</span>
-                <h3>GTA V</h3>
-                <p>เกมโลกเปิดที่ให้ผู้เล่นสำรวจเมืองและทำภารกิจต่าง ๆ</p>
-                <a href="https://www.rockstargames.com/gta-v" target="_blank">ดูรายละเอียด ↗</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="action">
-            <img src="https://placehold.co/600x400/29134a/ffffff?text=VALORANT" alt="Valorant">
-            <div class="info">
-                <span>⚔️ ACTION</span>
-                <h3>VALORANT</h3>
-                <p>เกมยิงแข่งขันแบบทีมที่ต้องใช้กลยุทธ์และการวางแผน</p>
-                <a href="https://playvalorant.com/" target="_blank">ดูรายละเอียด ↗</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="action">
-            <img src="https://placehold.co/600x400/29134a/ffffff?text=CALL+OF+DUTY" alt="Call of Duty">
-            <div class="info">
-                <span>⚔️ ACTION</span>
-                <h3>CALL OF DUTY</h3>
-                <p>เกมแอ็กชันที่มีโหมดการเล่นหลากหลาย</p>
-                <a href="https://www.callofduty.com/" target="_blank">ดูรายละเอียด ↗</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="adventure">
-            <img src="https://placehold.co/600x400/173b48/ffffff?text=MINECRAFT" alt="Minecraft">
-            <div class="info">
-                <span>🌍 ADVENTURE</span>
-                <h3>MINECRAFT</h3>
-                <p>เกมสร้างโลก สำรวจ และสร้างสิ่งต่าง ๆ ได้อย่างอิสระ</p>
-                <a href="https://www.minecraft.net/" target="_blank">ดูรายละเอียด ↗</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="adventure">
-            <img src="https://placehold.co/600x400/173b48/ffffff?text=GENSHIN+IMPACT" alt="Genshin Impact">
-            <div class="info">
-                <span>🌍 ADVENTURE</span>
-                <h3>GENSHIN IMPACT</h3>
-                <p>เกมผจญภัยในโลกแฟนตาซีที่เต็มไปด้วยเรื่องราว</p>
-                <a href="https://genshin.hoyoverse.com/" target="_blank">ดูรายละเอียด ↗</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="adventure">
-            <img src="https://placehold.co/600x400/173b48/ffffff?text=ZELDA" alt="Zelda">
-            <div class="info">
-                <span>🌍 ADVENTURE</span>
-                <h3>ZELDA</h3>
-                <p>เกมผจญภัย สำรวจดินแดนและค้นพบความลับ</p>
-                <a href="https://www.nintendo.com/" target="_blank">ดูรายละเอียด ↗</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="survival">
-            <img src="https://placehold.co/600x400/49321c/ffffff?text=PUBG" alt="PUBG">
-            <div class="info">
-                <span>🔥 SURVIVAL</span>
-                <h3>PUBG</h3>
-                <p>เกมเอาชีวิตรอดในสนามแข่งขัน ผู้เล่นต้องวางแผนเพื่อเป็นผู้ชนะ</p>
-                <a href="https://pubg.com/" target="_blank">ดูรายละเอียด ↗</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="survival">
-            <img src="https://placehold.co/600x400/49321c/ffffff?text=THE+FOREST" alt="The Forest">
-            <div class="info">
-                <span>🔥 SURVIVAL</span>
-                <h3>THE FOREST</h3>
-                <p>เกมเอาชีวิตรอดและสำรวจป่าลึกลับ</p>
-                <a href="https://store.steampowered.com/" target="_blank">ดูรายละเอียด ↗</a>
-            </div>
-        </div>
-
-        <div class="card" data-category="survival">
-            <img src="https://placehold.co/600x400/49321c/ffffff?text=SUBNAUTICA" alt="Subnautica">
-            <div class="info">
-                <span>🔥 SURVIVAL</span>
-                <h3>SUBNAUTICA</h3>
-                <p>เกมสำรวจโลกใต้ทะเลและเอาชีวิตรอด</p>
-                <a href="https://unknownworlds.com/subnautica/" target="_blank">ดูรายละเอียด ↗</a>
-            </div>
-        </div>
-
+<div class="card" data-category="action">
+    <img src="https://placehold.co/600x400/29134a/ffffff?text=OVERWATCH+2">
+    <div class="info">
+        <span>⚔️ ACTION</span>
+        <h3>OVERWATCH 2</h3>
+        <p>เกมแอ็กชันแบบทีมที่มีตัวละครหลากหลาย</p>
+        <a href="https://overwatch.blizzard.com/" target="_blank">ดูรายละเอียด ↗</a>
     </div>
-</main>
+</div>
 
-<footer>
-    <h2>🎮 GAME GALLERY</h2>
-    <p>Explore • Play • Enjoy</p>
-    <p>© 2026 Created by Student</p>
-</footer>
+<!-- เพิ่มเกม Adventure -->
 
-<script src="./script.js"></script>
-</body>
-</html>
+<div class="card" data-category="adventure">
+    <img src="https://placehold.co/600x400/173b48/ffffff?text=STARDEW+VALLEY">
+    <div class="info">
+        <span>🌍 ADVENTURE</span>
+        <h3>STARDEW VALLEY</h3>
+        <p>เกมทำฟาร์ม ใช้ชีวิต และสำรวจหมู่บ้าน</p>
+        <a href="https://www.stardewvalley.net/" target="_blank">ดูรายละเอียด ↗</a>
+    </div>
+</div>
+
+<div class="card" data-category="adventure">
+    <img src="https://placehold.co/600x400/173b48/ffffff?text=HOGWARTS+LEGACY">
+    <div class="info">
+        <span>🌍 ADVENTURE</span>
+        <h3>HOGWARTS LEGACY</h3>
+        <p>เกมผจญภัยในโลกเวทมนตร์ของโรงเรียนฮอกวอตส์</p>
+        <a href="https://www.hogwartslegacy.com/" target="_blank">ดูรายละเอียด ↗</a>
+    </div>
+</div>
+
+<div class="card" data-category="adventure">
+    <img src="https://placehold.co/600x400/173b48/ffffff?text=RED+DEAD+REDEMPTION+2">
+    <div class="info">
+        <span>🌍 ADVENTURE</span>
+        <h3>RED DEAD REDEMPTION 2</h3>
+        <p>เกมผจญภัยในโลกตะวันตกที่มีเรื่องราวเข้มข้น</p>
+        <a href="https://www.rockstargames.com/reddeadredemption2" target="_blank">ดูรายละเอียด ↗</a>
+    </div>
+</div>
+
+<!-- เพิ่มเกม Survival -->
+
+<div class="card" data-category="survival">
+    <img src="https://placehold.co/600x400/49321c/ffffff?text=DONT+STARVE">
+    <div class="info">
+        <span>🔥 SURVIVAL</span>
+        <h3>DON'T STARVE TOGETHER</h3>
+        <p>เกมเอาชีวิตรอดและรวบรวมทรัพยากร</p>
+        <a href="https://www.klei.com/games/dont-starve-together" target="_blank">ดูรายละเอียด ↗</a>
+    </div>
+</div>
+
+<div class="card" data-category="survival">
+    <img src="https://placehold.co/600x400/49321c/ffffff?text=ARK">
+    <div class="info">
+        <span>🔥 SURVIVAL</span>
+        <h3>ARK SURVIVAL</h3>
+        <p>เกมเอาชีวิตรอดในโลกที่เต็มไปด้วยไดโนเสาร์</p>
+        <a href="https://survivetheark.com/" target="_blank">ดูรายละเอียด ↗</a>
+    </div>
+</div>
+
+<div class="card" data-category="survival">
+    <img src="https://placehold.co/600x400/49321c/ffffff?text=RAFT">
+    <div class="info">
+        <span>🔥 SURVIVAL</span>
+        <h3>RAFT</h3>
+        <p>เกมเอาชีวิตรอดกลางทะเลและสร้างแพของตัวเอง</p>
+        <a href="https://raft-game.com/" target="_blank">ดูรายละเอียด ↗</a>
+    </div>
+</div>
