@@ -1,96 +1,89 @@
 
-<!-- เพิ่มเกม Action -->
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME GALLERY PRO</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
 
-<div class="card" data-category="action">
-    <img src="https://placehold.co/600x400/29134a/ffffff?text=APEX+LEGENDS">
-    <div class="info">
-        <span>⚔️ ACTION</span>
-        <h3>APEX LEGENDS</h3>
-        <p>เกมแข่งขันแนวแอ็กชันและวางแผนเป็นทีม</p>
-        <a href="https://www.ea.com/games/apex-legends" target="_blank">ดูรายละเอียด ↗</a>
+<header class="hero">
+    <nav class="navbar">
+        <h2>🎮 GAME GALLERY</h2>
+        <span>THE WORLD OF GAMING</span>
+    </nav>
+
+    <div class="hero-content">
+        <p class="tagline">WELCOME TO GAMING WORLD</p>
+        <h1>DISCOVER YOUR<br><span>NEXT GAME</span></h1>
+        <p>ค้นพบเกมที่ใช่ สำรวจโลกแห่งความสนุกไปด้วยกัน</p>
+        <a href="#games" class="explore">EXPLORE GAMES ↓</a>
+    </div>
+</header>
+
+<main id="games">
+
+    <section class="section-title">
+        <p>OUR COLLECTION</p>
+        <h2>ค้นหาเกมที่คุณชื่นชอบ</h2>
+        <span>รวมเกมยอดนิยม พร้อมข้อมูลและโปรไฟล์เกม</span>
+    </section>
+
+    <div class="search-box">
+        <input type="text" id="searchInput"
+        placeholder="🔍 ค้นหาชื่อเกม...">
+    </div>
+
+    <div class="filters">
+        <button class="active" data-filter="all">ทั้งหมด</button>
+        <button data-filter="action">⚔️ Action</button>
+        <button data-filter="adventure">🌍 Adventure</button>
+        <button data-filter="survival">🔥 Survival</button>
+    </div>
+
+    <p class="game-count" id="gameCount"></p>
+
+    <div class="gallery" id="gameGallery"></div>
+
+</main>
+
+<!-- หน้าต่างโปรไฟล์เกม -->
+<div class="modal" id="profileModal">
+    <div class="modal-content">
+
+        <button class="close-btn" id="closeModal">✕</button>
+
+        <img id="profileImage" src="" alt="Game">
+
+        <div class="profile-info">
+            <span id="profileCategory"></span>
+            <h2 id="profileName"></h2>
+
+            <p id="profileDescription"></p>
+
+            <div class="profile-details">
+                <p><strong>🏢 ผู้พัฒนา:</strong> <span id="profileDeveloper"></span></p>
+                <p><strong>💻 แพลตฟอร์ม:</strong> <span id="profilePlatform"></span></p>
+                <p><strong>🎮 รูปแบบ:</strong> <span id="profileMode"></span></p>
+                <p><strong>📅 ปีที่เปิดตัว:</strong> <span id="profileYear"></span></p>
+            </div>
+
+            <a id="profileLink" href="#" target="_blank" rel="noopener">
+                🌐 เว็บไซต์เกมอย่างเป็นทางการ
+            </a>
+        </div>
     </div>
 </div>
 
-<div class="card" data-category="action">
-    <img src="https://placehold.co/600x400/29134a/ffffff?text=FORTNITE">
-    <div class="info">
-        <span>⚔️ ACTION</span>
-        <h3>FORTNITE</h3>
-        <p>เกมต่อสู้และสร้างสิ่งต่าง ๆ ภายในโลกของเกม</p>
-        <a href="https://www.fortnite.com/" target="_blank">ดูรายละเอียด ↗</a>
-    </div>
-</div>
+<footer>
+    <h2>🎮 GAME GALLERY</h2>
+    <p>EXPLORE • PLAY • ENJOY</p>
+    <p>© 2026 Created by Student</p>
+</footer>
 
-<div class="card" data-category="action">
-    <img src="https://placehold.co/600x400/29134a/ffffff?text=OVERWATCH+2">
-    <div class="info">
-        <span>⚔️ ACTION</span>
-        <h3>OVERWATCH 2</h3>
-        <p>เกมแอ็กชันแบบทีมที่มีตัวละครหลากหลาย</p>
-        <a href="https://overwatch.blizzard.com/" target="_blank">ดูรายละเอียด ↗</a>
-    </div>
-</div>
+<script src="./script.js"></script>
 
-<!-- เพิ่มเกม Adventure -->
-
-<div class="card" data-category="adventure">
-    <img src="https://placehold.co/600x400/173b48/ffffff?text=STARDEW+VALLEY">
-    <div class="info">
-        <span>🌍 ADVENTURE</span>
-        <h3>STARDEW VALLEY</h3>
-        <p>เกมทำฟาร์ม ใช้ชีวิต และสำรวจหมู่บ้าน</p>
-        <a href="https://www.stardewvalley.net/" target="_blank">ดูรายละเอียด ↗</a>
-    </div>
-</div>
-
-<div class="card" data-category="adventure">
-    <img src="https://placehold.co/600x400/173b48/ffffff?text=HOGWARTS+LEGACY">
-    <div class="info">
-        <span>🌍 ADVENTURE</span>
-        <h3>HOGWARTS LEGACY</h3>
-        <p>เกมผจญภัยในโลกเวทมนตร์ของโรงเรียนฮอกวอตส์</p>
-        <a href="https://www.hogwartslegacy.com/" target="_blank">ดูรายละเอียด ↗</a>
-    </div>
-</div>
-
-<div class="card" data-category="adventure">
-    <img src="https://placehold.co/600x400/173b48/ffffff?text=RED+DEAD+REDEMPTION+2">
-    <div class="info">
-        <span>🌍 ADVENTURE</span>
-        <h3>RED DEAD REDEMPTION 2</h3>
-        <p>เกมผจญภัยในโลกตะวันตกที่มีเรื่องราวเข้มข้น</p>
-        <a href="https://www.rockstargames.com/reddeadredemption2" target="_blank">ดูรายละเอียด ↗</a>
-    </div>
-</div>
-
-<!-- เพิ่มเกม Survival -->
-
-<div class="card" data-category="survival">
-    <img src="https://placehold.co/600x400/49321c/ffffff?text=DONT+STARVE">
-    <div class="info">
-        <span>🔥 SURVIVAL</span>
-        <h3>DON'T STARVE TOGETHER</h3>
-        <p>เกมเอาชีวิตรอดและรวบรวมทรัพยากร</p>
-        <a href="https://www.klei.com/games/dont-starve-together" target="_blank">ดูรายละเอียด ↗</a>
-    </div>
-</div>
-
-<div class="card" data-category="survival">
-    <img src="https://placehold.co/600x400/49321c/ffffff?text=ARK">
-    <div class="info">
-        <span>🔥 SURVIVAL</span>
-        <h3>ARK SURVIVAL</h3>
-        <p>เกมเอาชีวิตรอดในโลกที่เต็มไปด้วยไดโนเสาร์</p>
-        <a href="https://survivetheark.com/" target="_blank">ดูรายละเอียด ↗</a>
-    </div>
-</div>
-
-<div class="card" data-category="survival">
-    <img src="https://placehold.co/600x400/49321c/ffffff?text=RAFT">
-    <div class="info">
-        <span>🔥 SURVIVAL</span>
-        <h3>RAFT</h3>
-        <p>เกมเอาชีวิตรอดกลางทะเลและสร้างแพของตัวเอง</p>
-        <a href="https://raft-game.com/" target="_blank">ดูรายละเอียด ↗</a>
-    </div>
-</div>
+</body>
+</html>
