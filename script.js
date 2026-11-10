@@ -1,5 +1,5 @@
 
-function filterMusic(category, button) {
+function filterGame(category, button) {
 
     const cards = document.querySelectorAll(".card");
     const buttons = document.querySelectorAll(".filters button");
@@ -12,10 +12,15 @@ function filterMusic(category, button) {
 
     cards.forEach(card => {
 
-        if (category === "all" || card.dataset.category === category) {
+        if (category === "all" ||
+            card.dataset.category === category) {
+
             card.style.display = "block";
+
         } else {
+
             card.style.display = "none";
+
         }
 
     });
