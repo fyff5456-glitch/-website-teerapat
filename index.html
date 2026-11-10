@@ -4,139 +4,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THAI MUSIC GALLERY</title>
-    <link rel="stylesheet" href="style.css">
+    <title>GAME GALLERY</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-<header>
-    <h1>🎵 THAI MUSIC GALLERY</h1>
-    <p>ค้นพบเพลงไทยที่ใช่ ในอารมณ์ที่เป็นคุณ</p>
+<header class="hero">
+    <nav>
+        <h2>🎮 GAME GALLERY</h2>
+        <span>GAME COLLECTION</span>
+    </nav>
+
+    <div class="hero-content">
+        <p class="tagline">WELCOME TO GAMING WORLD</p>
+        <h1>DISCOVER YOUR<br><span>NEXT GAME</span></h1>
+        <p>รวมเกมยอดนิยมที่คุณไม่ควรพลาด</p>
+        <a href="#games" class="explore">EXPLORE GAMES ↓</a>
+    </div>
 </header>
 
-<main>
-    <h2>🎧 ค้นหาเพลงตามอารมณ์</h2>
+<main id="games">
+    <section class="section-title">
+        <p>OUR COLLECTION</p>
+        <h2>ค้นหาเกมที่คุณชอบ</h2>
+        <span>เลือกหมวดหมู่เกมที่สนใจได้เลย</span>
+    </section>
 
     <div class="filters">
-        <button class="active" onclick="filterMusic('all',this)">ทั้งหมด</button>
-        <button onclick="filterMusic('sad',this)">💔 เพลงเศร้า</button>
-        <button onclick="filterMusic('love',this)">❤️ เพลงรัก</button>
-        <button onclick="filterMusic('fun',this)">🎉 เพลงสนุก</button>
+        <button class="active" onclick="filterGame('all',this)">ทั้งหมด</button>
+        <button onclick="filterGame('action',this)">⚔️ Action</button>
+        <button onclick="filterGame('adventure',this)">🌍 Adventure</button>
+        <button onclick="filterGame('survival',this)">🔥 Survival</button>
     </div>
 
     <div class="gallery">
 
-        <!-- เพลงเศร้า -->
-
-        <div class="card" data-category="sad">
-            <img src="https://placehold.co/500x300/35243f/ffffff?text=SAD+SONG">
-            <div class="song-info">
-                <h3>ซ่อนกลิ่น</h3>
-                <p>🎤 ศิลปิน: PALMY</p>
-                <p>🎼 แนวเพลง: Pop</p>
-                <p class="description">เพลงเกี่ยวกับความทรงจำและความรักที่ยังคงอยู่ในใจ</p>
-                <span>💔 เพลงเศร้า</span>
-                <a href="https://www.youtube.com/results?search_query=PALMY+ซ่อนกลิ่น" target="_blank">▶ ฟังเพลง</a>
+        <div class="card" data-category="action">
+            <img src="https://placehold.co/600x400/29134a/ffffff?text=GTA+V" alt="GTA V">
+            <div class="info">
+                <span>⚔️ ACTION</span>
+                <h3>GTA V</h3>
+                <p>เกมโลกเปิดที่ให้ผู้เล่นสำรวจเมืองและทำภารกิจต่าง ๆ</p>
+                <a href="https://www.rockstargames.com/gta-v" target="_blank">ดูรายละเอียด ↗</a>
             </div>
         </div>
 
-        <div class="card" data-category="sad">
-            <img src="https://placehold.co/500x300/35243f/ffffff?text=SAD+SONG">
-            <div class="song-info">
-                <h3>ฝนตกไหม</h3>
-                <p>🎤 ศิลปิน: Three Man Down</p>
-                <p>🎼 แนวเพลง: Pop Rock</p>
-                <p class="description">เพลงที่สื่อถึงความคิดถึงและความห่วงใยคนที่อยู่ไกล</p>
-                <span>💔 เพลงเศร้า</span>
-                <a href="https://www.youtube.com/results?search_query=Three+Man+Down+ฝนตกไหม" target="_blank">▶ ฟังเพลง</a>
+        <div class="card" data-category="action">
+            <img src="https://placehold.co/600x400/29134a/ffffff?text=VALORANT" alt="Valorant">
+            <div class="info">
+                <span>⚔️ ACTION</span>
+                <h3>VALORANT</h3>
+                <p>เกมยิงแข่งขันแบบทีมที่ต้องใช้กลยุทธ์และการวางแผน</p>
+                <a href="https://playvalorant.com/" target="_blank">ดูรายละเอียด ↗</a>
             </div>
         </div>
 
-        <div class="card" data-category="sad">
-            <img src="https://placehold.co/500x300/35243f/ffffff?text=SAD+SONG">
-            <div class="song-info">
-                <h3>ถ้าเราเจอกันอีก</h3>
-                <p>🎤 ศิลปิน: Tilly Birds</p>
-                <p>🎼 แนวเพลง: Pop Rock</p>
-                <p class="description">เพลงเกี่ยวกับการจากลาและความหวังที่จะได้พบกันอีกครั้ง</p>
-                <span>💔 เพลงเศร้า</span>
-                <a href="https://www.youtube.com/results?search_query=Tilly+Birds+ถ้าเราเจอกันอีก" target="_blank">▶ ฟังเพลง</a>
+        <div class="card" data-category="action">
+            <img src="https://placehold.co/600x400/29134a/ffffff?text=CALL+OF+DUTY" alt="Call of Duty">
+            <div class="info">
+                <span>⚔️ ACTION</span>
+                <h3>CALL OF DUTY</h3>
+                <p>เกมแอ็กชันที่มีโหมดการเล่นหลากหลาย</p>
+                <a href="https://www.callofduty.com/" target="_blank">ดูรายละเอียด ↗</a>
             </div>
         </div>
 
-        <!-- เพลงรัก -->
-
-        <div class="card" data-category="love">
-            <img src="https://placehold.co/500x300/633047/ffffff?text=LOVE+SONG">
-            <div class="song-info">
-                <h3>รักแรก</h3>
-                <p>🎤 ศิลปิน: NONT TANONT</p>
-                <p>🎼 แนวเพลง: Pop</p>
-                <p class="description">เพลงที่เล่าถึงความรักครั้งแรกและความทรงจำที่สวยงาม</p>
-                <span>❤️ เพลงรัก</span>
-                <a href="https://www.youtube.com/results?search_query=NONT+TANONT+รักแรก" target="_blank">▶ ฟังเพลง</a>
+        <div class="card" data-category="adventure">
+            <img src="https://placehold.co/600x400/173b48/ffffff?text=MINECRAFT" alt="Minecraft">
+            <div class="info">
+                <span>🌍 ADVENTURE</span>
+                <h3>MINECRAFT</h3>
+                <p>เกมสร้างโลก สำรวจ และสร้างสิ่งต่าง ๆ ได้อย่างอิสระ</p>
+                <a href="https://www.minecraft.net/" target="_blank">ดูรายละเอียด ↗</a>
             </div>
         </div>
 
-        <div class="card" data-category="love">
-            <img src="https://placehold.co/500x300/633047/ffffff?text=LOVE+SONG">
-            <div class="song-info">
-                <h3>คลั่งรัก</h3>
-                <p>🎤 ศิลปิน: First Anuwat</p>
-                <p>🎼 แนวเพลง: Pop</p>
-                <p class="description">เพลงที่ถ่ายทอดความรู้สึกของคนที่กำลังตกหลุมรัก</p>
-                <span>❤️ เพลงรัก</span>
-                <a href="https://www.youtube.com/results?search_query=First+Anuwat+คลั่งรัก" target="_blank">▶ ฟังเพลง</a>
+        <div class="card" data-category="adventure">
+            <img src="https://placehold.co/600x400/173b48/ffffff?text=GENSHIN+IMPACT" alt="Genshin Impact">
+            <div class="info">
+                <span>🌍 ADVENTURE</span>
+                <h3>GENSHIN IMPACT</h3>
+                <p>เกมผจญภัยในโลกแฟนตาซีที่เต็มไปด้วยเรื่องราว</p>
+                <a href="https://genshin.hoyoverse.com/" target="_blank">ดูรายละเอียด ↗</a>
             </div>
         </div>
 
-        <div class="card" data-category="love">
-            <img src="https://placehold.co/500x300/633047/ffffff?text=LOVE+SONG">
-            <div class="song-info">
-                <h3>คู่ชีวิต</h3>
-                <p>🎤 ศิลปิน: COCKTAIL</p>
-                <p>🎼 แนวเพลง: Rock</p>
-                <p class="description">เพลงที่สื่อถึงความรักและการอยู่เคียงข้างกันตลอดไป</p>
-                <span>❤️ เพลงรัก</span>
-                <a href="https://www.youtube.com/results?search_query=COCKTAIL+คู่ชีวิต" target="_blank">▶ ฟังเพลง</a>
+        <div class="card" data-category="adventure">
+            <img src="https://placehold.co/600x400/173b48/ffffff?text=ZELDA" alt="Zelda">
+            <div class="info">
+                <span>🌍 ADVENTURE</span>
+                <h3>ZELDA</h3>
+                <p>เกมผจญภัย สำรวจดินแดนและค้นพบความลับ</p>
+                <a href="https://www.nintendo.com/" target="_blank">ดูรายละเอียด ↗</a>
             </div>
         </div>
 
-        <!-- เพลงสนุก -->
-
-        <div class="card" data-category="fun">
-            <img src="https://placehold.co/500x300/34345a/ffffff?text=FUN+SONG">
-            <div class="song-info">
-                <h3>ทรงอย่างแบด</h3>
-                <p>🎤 ศิลปิน: Paper Planes</p>
-                <p>🎼 แนวเพลง: Rock</p>
-                <p class="description">เพลงจังหวะสนุกสนานที่ได้รับความนิยมอย่างมาก</p>
-                <span>🎉 เพลงสนุก</span>
-                <a href="https://www.youtube.com/results?search_query=Paper+Planes+ทรงอย่างแบด" target="_blank">▶ ฟังเพลง</a>
+        <div class="card" data-category="survival">
+            <img src="https://placehold.co/600x400/49321c/ffffff?text=PUBG" alt="PUBG">
+            <div class="info">
+                <span>🔥 SURVIVAL</span>
+                <h3>PUBG</h3>
+                <p>เกมเอาชีวิตรอดในสนามแข่งขัน ผู้เล่นต้องวางแผนเพื่อเป็นผู้ชนะ</p>
+                <a href="https://pubg.com/" target="_blank">ดูรายละเอียด ↗</a>
             </div>
         </div>
 
-        <div class="card" data-category="fun">
-            <img src="https://placehold.co/500x300/34345a/ffffff?text=FUN+SONG">
-            <div class="song-info">
-                <h3>วัดปะหล่ะ?</h3>
-                <p>🎤 ศิลปิน: 4EVE</p>
-                <p>🎼 แนวเพลง: T-Pop</p>
-                <p class="description">เพลงป๊อปจังหวะสนุกที่เต็มไปด้วยความสดใส</p>
-                <span>🎉 เพลงสนุก</span>
-                <a href="https://www.youtube.com/results?search_query=4EVE+วัดปะหล่ะ" target="_blank">▶ ฟังเพลง</a>
+        <div class="card" data-category="survival">
+            <img src="https://placehold.co/600x400/49321c/ffffff?text=THE+FOREST" alt="The Forest">
+            <div class="info">
+                <span>🔥 SURVIVAL</span>
+                <h3>THE FOREST</h3>
+                <p>เกมเอาชีวิตรอดและสำรวจป่าลึกลับ</p>
+                <a href="https://store.steampowered.com/" target="_blank">ดูรายละเอียด ↗</a>
             </div>
         </div>
 
-        <div class="card" data-category="fun">
-            <img src="https://placehold.co/500x300/34345a/ffffff?text=FUN+SONG">
-            <div class="song-info">
-                <h3>เมร่อน</h3>
-                <p>🎤 ศิลปิน: JUEPAK</p>
-                <p>🎼 แนวเพลง: Dance</p>
-                <p class="description">เพลงจังหวะสนุกสนาน เหมาะสำหรับการเต้นและความบันเทิง</p>
-                <span>🎉 เพลงสนุก</span>
-                <a href="https://www.youtube.com/results?search_query=JUEPAK+เมร่อน" target="_blank">▶ ฟังเพลง</a>
+        <div class="card" data-category="survival">
+            <img src="https://placehold.co/600x400/49321c/ffffff?text=SUBNAUTICA" alt="Subnautica">
+            <div class="info">
+                <span>🔥 SURVIVAL</span>
+                <h3>SUBNAUTICA</h3>
+                <p>เกมสำรวจโลกใต้ทะเลและเอาชีวิตรอด</p>
+                <a href="https://unknownworlds.com/subnautica/" target="_blank">ดูรายละเอียด ↗</a>
             </div>
         </div>
 
@@ -144,11 +133,11 @@
 </main>
 
 <footer>
-    <h3>🎵 THAI MUSIC GALLERY</h3>
-    <p>เว็บไซต์รวบรวมเพลงไทยที่คุณชื่นชอบ</p>
+    <h2>🎮 GAME GALLERY</h2>
+    <p>Explore • Play • Enjoy</p>
     <p>© 2026 Created by Student</p>
 </footer>
 
-<script src="script.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>
